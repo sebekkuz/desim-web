@@ -1,0 +1,25 @@
+define:
+  Gen1:
+    type: EntityGenerator
+    inputs:
+      InterarrivalTime: { dist: { type: Exponential, mean: 5 } }
+      EntityType: "Box"
+  Q1:
+    type: Queue
+    inputs:
+      Capacity: 1000
+  S1:
+    type: Server
+    inputs:
+      ServiceTime: { dist: { type: Triangular, min: 3, mode: 5, max: 8 } }
+  Sink1:
+    type: EntitySink
+
+links:
+  - { from: Gen1, to: Q1 }
+  - { from: Q1, to: S1 }
+  - { from: S1, to: Sink1 }
+
+globals:
+  units:
+    time: s
