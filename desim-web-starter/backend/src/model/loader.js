@@ -1,5 +1,5 @@
 import YAML from 'yaml';
-import { ModelSchema } from '../../shared/protocol.js';
+import { ModelSchema } from '../../../shared/protocol.js';
 import { EntityGenerator } from '../sim/components/EntityGenerator.js';
 import { Queue } from '../sim/components/Queue.js';
 import { Server } from '../sim/components/Server.js';
